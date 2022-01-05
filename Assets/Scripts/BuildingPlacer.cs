@@ -4,62 +4,97 @@ using UnityEngine;
 
 public class BuildingPlacer : MonoBehaviour
 {
-    private bool currentlyPlacing;
-    private BuildingPreset curBuildingPreset;
+	private bool currentlyPlacing;
+	private BuildingPreset curBuildingPreset;
 
-    private float placementIndicatorUpdateRate = 0.05f;
-    private float lastUpdateTime;
-    private Vector3 curPlacementPos;
+	private float placementIndicatorUpdateRate = 0.05f;
+	private float lastUpdateTime;
+	private Vector3 curPlacementPos;
+	private Vector3 startPosition;
+	private Vector3 endPosition;
 
-    public GameObject placementIndicator;
+	private bool placementMode = false;
 
-    public static BuildingPlacer inst;
 
-    void Awake()
-    {
-        inst = this;
-    }
 
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Escape))
-            CancelBuildingPlacement();
+	public GameObject placementIndicator;
+	public static BuildingPlacer inst;
 
-        if(Time.time - lastUpdateTime > placementIndicatorUpdateRate && currentlyPlacing)
-        {
-            lastUpdateTime = Time.time;
+	private bool firstClick = true;
 
-            curPlacementPos = Selector.inst.GetCurTilePosition();
-            placementIndicator.transform.position = curPlacementPos;
-        }
+	void Awake()
+	{
+		inst = this;
+	}
 
-        if(currentlyPlacing && Input.GetMouseButtonDown(0))
-        {
-            PlaceBuilding();
-        }
-    }
+	void Update()
+	{
+		if (Input.GetKeyDown(KeyCode.Escape))
+			CancelBuildingPlacement();
 
-    public void BeginNewBuildingPlacement(BuildingPreset buildingPreset)
-    {
-        if(City.inst.money < buildingPreset.cost)
-            return;
+		if (Time.time - lastUpdateTime > placementIndicatorUpdateRate && currentlyPlacing)
+		{
+			lastUpdateTime = Time.time;
 
-        currentlyPlacing = true;
-        curBuildingPreset = buildingPreset;
-        placementIndicator.SetActive(true);
-    }
+			curPlacementPos = Selector.inst.GetCurTilePosition();
+			placementIndicator.transform.position = curPlacementPos;
+		}
 
-    public void CancelBuildingPlacement()
-    {
-        currentlyPlacing = false;
-        placementIndicator.SetActive(false);
-    }
+		if (currentlyPlacing && Input.GetMouseButtonDown(0))
+		{
+			if (!curBuildingPreset.allowMultiple)
+			{
+				PlaceBuilding();
+			}
+			else
+			{
+				//CancelBuildingPlacement();
+				if (firstClick)
+				{
+					// Record starting position
+					startPosition = curPlacementPos;
+					firstClick = false;
+				}
+				else
+				{
+					endPosition = curPlacementPos;
+					//PlacementManager.GetPath();
 
-    void PlaceBuilding()
-    {
-        GameObject buildingObj = Instantiate(curBuildingPreset.prefab, curPlacementPos, Quaternion.identity);
-        City.inst.OnPlaceBuilding(curBuildingPreset);
+					//CancelBuildingPlacement(startPosition, endPosition);
+					//PlaceBuilding();
+				}
 
-        CancelBuildingPlacement();
-    }
+				// Record end position
+				//Debug.Log(curPlacementPos);
+			}
+
+		}
+	}
+
+	public void BeginNewBuildingPlacement(BuildingPreset buildingPreset)
+	{
+		if (City.inst.money < buildingPreset.cost)
+			return;
+
+		currentlyPlacing = true;
+		curBuildingPreset = buildingPreset;
+
+
+
+		placementIndicator.SetActive(true);
+	}
+
+	public void CancelBuildingPlacement()
+	{
+		currentlyPlacing = false;
+		placementIndicator.SetActive(false);
+	}
+
+	void PlaceBuilding()
+	{
+		GameObject buildingObj = Instantiate(curBuildingPreset.prefab, curPlacementPos, Quaternion.identity);
+		City.inst.OnPlaceBuilding(curBuildingPreset);
+
+		CancelBuildingPlacement();
+	}
 }
