@@ -13,10 +13,6 @@ public class BuildingPlacer : MonoBehaviour
 	private Vector3 startPosition;
 	private Vector3 endPosition;
 
-	private bool placementMode = false;
-
-
-
 	public GameObject placementIndicator;
 	public static BuildingPlacer inst;
 

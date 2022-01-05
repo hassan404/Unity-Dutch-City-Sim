@@ -4,10 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+// Source https://github.com/SunnyValleyStudio/SimpleCityBuilder
+
 public class InputManager : MonoBehaviour
 {
-    public Action<Vector3Int> OnMouseClick, OnMouseHold;
-    public Action OnMouseUp;
+	public Action<Vector3Int> OnMouseClick, OnMouseHold;
+	public Action OnMouseUp;
 	private Vector2 cameraMovementVector;
 
 	[SerializeField]
@@ -28,11 +30,11 @@ public class InputManager : MonoBehaviour
 		CheckArrowInput();
 	}
 
-	private Vector3Int? RaycastGround()
+	public Vector3Int? RaycastGround()
 	{
 		RaycastHit hit;
 		Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-		if(Physics.Raycast(ray, out hit, Mathf.Infinity, groundMask))
+		if (Physics.Raycast(ray, out hit, Mathf.Infinity, groundMask))
 		{
 			Vector3Int positionInt = Vector3Int.RoundToInt(hit.point);
 			return positionInt;
@@ -47,7 +49,7 @@ public class InputManager : MonoBehaviour
 
 	private void CheckClickHoldEvent()
 	{
-		if(Input.GetMouseButton(0) && EventSystem.current.IsPointerOverGameObject() == false)
+		if (Input.GetMouseButton(0) && EventSystem.current.IsPointerOverGameObject() == false)
 		{
 			var position = RaycastGround();
 			if (position != null)

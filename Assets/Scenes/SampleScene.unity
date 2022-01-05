@@ -988,6 +988,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 201029714}
   m_CullTransparentMesh: 1
+--- !u!1 &203759267
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 203759269}
+  - component: {fileID: 203759268}
+  m_Layer: 0
+  m_Name: _StructureManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &203759268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 203759267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8a86179eca8aa3408c50254b34fa7a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  housesPrefabe:
+  - prefab: {fileID: 1593937742441068266, guid: ddbfc78d5b9bfbf419c65763e029ab0e, type: 3}
+    weight: 0
+  specialPrefabs: []
+  placementManager: {fileID: 1824309935}
+--- !u!4 &203759269
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 203759267}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.9535131, y: -4.4331512, z: 1.7277565}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &240339182
 GameObject:
   m_ObjectHideFlags: 0
@@ -2346,7 +2395,7 @@ GameObject:
   - component: {fileID: 1230103776}
   - component: {fileID: 1230103780}
   m_Layer: 6
-  m_Name: Cube
+  m_Name: GroundCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3173,7 +3222,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1738744007}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 87d371087d6c2a445ac35bb9471a2b19, type: 3}
   m_Name: 
@@ -3207,8 +3256,9 @@ MonoBehaviour:
   cameraMovement: {fileID: 963194229}
   roadManager: {fileID: 1661484765}
   inputManager: {fileID: 880261163}
+  placementManager: {fileID: 1824309935}
   uiController: {fileID: 1259329749}
-  structureManager: {fileID: 0}
+  structureManager: {fileID: 203759268}
 --- !u!1 &1755474222
 GameObject:
   m_ObjectHideFlags: 0
@@ -3316,6 +3366,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   width: 50
   height: 50
+  inputManager: {fileID: 880261163}
+  placementIndicator: {fileID: 2101625208}
 --- !u!4 &1824309936
 Transform:
   m_ObjectHideFlags: 0
@@ -3680,7 +3732,7 @@ GameObject:
   - component: {fileID: 1919587863}
   - component: {fileID: 1919587862}
   m_Layer: 6
-  m_Name: Ground
+  m_Name: GroundPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

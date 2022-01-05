@@ -3,10 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Source https://github.com/SunnyValleyStudio/SimpleCityBuilder
+
 public class PlacementManager : MonoBehaviour
 {
 	public int width, height;
 	Grid placementGrid;
+	public InputManager inputManager;
+	private float placementIndicatorUpdateRate = 0.05f;
+	private float lastUpdateTime;
+	public GameObject placementIndicator;
+	private bool currentlyPlacing;
 
 	private Dictionary<Vector3Int, StructureModel> temporaryRoadobjects = new Dictionary<Vector3Int, StructureModel>();
 	private Dictionary<Vector3Int, StructureModel> structureDictionary = new Dictionary<Vector3Int, StructureModel>();
@@ -15,6 +22,33 @@ public class PlacementManager : MonoBehaviour
 	{
 		placementGrid = new Grid(width, height);
 	}
+	private void Update()
+	{
+		if (Time.time - lastUpdateTime > placementIndicatorUpdateRate && currentlyPlacing)
+		{
+			lastUpdateTime = Time.time;
+
+			var position = inputManager.RaycastGround();
+			if ((Vector3)position != null)
+			{
+				placementIndicator.transform.position = (Vector3)position;
+			}
+
+		}
+	}
+
+	public void StartPlacement()
+	{
+		currentlyPlacing = true;
+		placementIndicator.SetActive(true);
+	}
+
+	public void EndPlacement()
+	{
+		currentlyPlacing = false;
+		placementIndicator.SetActive(false);
+	}
+
 
 	internal CellType[] GetNeighbourTypesFor(Vector3Int position)
 	{

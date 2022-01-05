@@ -4,16 +4,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+// Source https://github.com/SunnyValleyStudio/SimpleCityBuilder
 public class GameManager : MonoBehaviour
 {
 	public CameraMovement cameraMovement;
 	public RoadManager roadManager;
 	public InputManager inputManager;
+	public PlacementManager placementManager;
 
 	public UIController uiController;
 
 	public StructureManager structureManager;
 
+	private float lastUpdateTime;
 	private void Start()
 	{
 		uiController.OnRoadPlacement += RoadPlacementHandler;
@@ -48,10 +52,13 @@ public class GameManager : MonoBehaviour
 		inputManager.OnMouseClick = null;
 		inputManager.OnMouseHold = null;
 		inputManager.OnMouseUp = null;
+
+		placementManager.StartPlacement();
 	}
 
 	private void Update()
 	{
 		cameraMovement.MoveCamera(new Vector3(inputManager.CameraMovementVector.x, 0, inputManager.CameraMovementVector.y));
 	}
+
 }
