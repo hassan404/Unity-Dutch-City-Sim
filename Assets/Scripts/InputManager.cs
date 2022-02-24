@@ -12,8 +12,7 @@ public class InputManager : MonoBehaviour
 	public Action OnMouseUp;
 	private Vector2 cameraMovementVector;
 
-	[SerializeField]
-	Camera mainCamera;
+	[SerializeField] Camera mainCamera;
 
 	public LayerMask groundMask;
 
@@ -54,27 +53,30 @@ public class InputManager : MonoBehaviour
 			var position = RaycastGround();
 			if (position != null)
 				OnMouseHold?.Invoke(position.Value);
+			//print("saljem event drzanja misa " + position);
 
 		}
 	}
 
 	private void CheckClickUpEvent()
 	{
-		if (Input.GetMouseButtonUp(0) && EventSystem.current.IsPointerOverGameObject() == false)
+		//&& EventSystem.current.IsPointerOverGameObject() == false
+		if (Input.GetMouseButtonUp(0) )
 		{
 			OnMouseUp?.Invoke();
-
+			//print("saljem event drzanja misa");
 		}
 	}
 
 	private void CheckClickDownEvent()
 	{
-		if (Input.GetMouseButtonDown(0) && EventSystem.current.IsPointerOverGameObject() == false)
+		//&& EventSystem.current.IsPointerOverGameObject() == false
+		if (Input.GetMouseButtonDown(0) )
 		{
 			var position = RaycastGround();
 			if (position != null)
 				OnMouseClick?.Invoke(position.Value);
-
+			//print("saljem event drzanja misa " + position);
 		}
 	}
 }

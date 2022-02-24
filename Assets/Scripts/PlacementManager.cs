@@ -96,6 +96,7 @@ public class PlacementManager : MonoBehaviour
 		placementGrid[position.x, position.z] = type;
 		StructureModel structure = CreateANewStructureModel(position, structurePrefab, type);
 		temporaryRoadobjects.Add(position, structure);
+//		print("postavlja se privremena struktura " + position + " " + structurePrefab.name + " tip celije je " + type);
 	}
 
 	internal List<Vector3Int> GetNeighboursOfTypeFor(Vector3Int position, CellType type)

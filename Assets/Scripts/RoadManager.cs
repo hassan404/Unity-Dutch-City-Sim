@@ -26,22 +26,29 @@ public class RoadManager : MonoBehaviour
 		placementManager.EndPlacement();
 		if (placementManager.CheckIfPositionInBound(position) == false)
 			return;
+		/*
 		if (placementManager.CheckIfPositionIsFree(position) == false)
+		{
+			//print("pozicija nije slobodna vracam se ");
 			return;
+		}
+		*/
 		if (placementMode == false)
 		{
-			temporaryPlacementPositions.Clear();
-			roadPositionsToRecheck.Clear();
+			//temporaryPlacementPositions.Clear();
+			//roadPositionsToRecheck.Clear();
 
 			placementMode = true;
 			startPosition = position;
 
-			temporaryPlacementPositions.Add(position);
-			placementManager.PlaceTemporaryStructure(position, roadFixer.deadEnd, CellType.Road);
+			//temporaryPlacementPositions.Add(position);
+			//placementManager.PlaceTemporaryStructure(position, roadFixer.deadEnd, CellType.Road);
+			print("postavljam novi put na " + position + " " + roadFixer.deadEnd);
 
 		}
 		else
 		{
+			print("usao u brisanje puteva i ponovno crtanje ");
 			placementManager.RemoveAllTemporaryStructures();
 			temporaryPlacementPositions.Clear();
 
