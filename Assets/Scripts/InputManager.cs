@@ -12,7 +12,10 @@ public class InputManager : MonoBehaviour
 	public Action OnMouseUp;
 	private Vector2 cameraMovementVector;
 
-	[SerializeField] Camera mainCamera;
+	[SerializeField] private Camera mainCamera;
+	[SerializeField] private RoadManager roadManager;
+	[SerializeField] private StructureManager structureManager;
+	[SerializeField] private GameManager gameManager;
 
 	public LayerMask groundMask;
 
@@ -52,8 +55,11 @@ public class InputManager : MonoBehaviour
 		{
 			var position = RaycastGround();
 			if (position != null)
-				OnMouseHold?.Invoke(position.Value);
-			//print("saljem event drzanja misa " + position);
+			{
+				gameManager.ClearInputActions();
+				var pos = (Vector3Int) position;
+				roadManager.PlaceRoad(pos);
+			}
 
 		}
 	}
@@ -63,7 +69,11 @@ public class InputManager : MonoBehaviour
 		//&& EventSystem.current.IsPointerOverGameObject() == false
 		if (Input.GetMouseButtonUp(0) )
 		{
-			OnMouseUp?.Invoke();
+			gameManager.ClearInputActions();
+			roadManager.FinishPlacingRoad();
+			
+			//OnMouseUp?.Invoke();
+
 			//print("saljem event drzanja misa");
 		}
 	}
@@ -75,7 +85,13 @@ public class InputManager : MonoBehaviour
 		{
 			var position = RaycastGround();
 			if (position != null)
-				OnMouseClick?.Invoke(position.Value);
+			{
+				gameManager.ClearInputActions();
+				var pos = (Vector3Int) position;
+				structureManager.PlaceSpecial(pos);
+				structureManager.PlaceHouse(pos);
+			}
+				
 			//print("saljem event drzanja misa " + position);
 		}
 	}
