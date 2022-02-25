@@ -40,16 +40,42 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlacementManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UIScripts/MainMenuController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/BuildingScripts/BuildingPlacer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/BuildingScripts/BuildingPreset.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/BuildingScripts/StructureManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CameraScripts/CameraController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/BuildingScripts/StructureModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CameraScripts/CameraMovement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/RoadScripts/RoadFixer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManagerScripts/City.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/RoadScripts/RoadManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManagerScripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UIScripts/UIController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManagerScripts/InputManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManagerScripts/TimeManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Selector.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AudioPlayer.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/PlacementManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/RoadManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/InputManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/RoadScripts/RoadFixer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/BuildingScripts/StructureModel.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UIScripts/MainMenuController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameManagerScripts/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UIScripts/UIController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameManagerScripts/TimeManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/BuildingScripts/StructureManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlacementManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameManagerScripts/City.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/BuildingScripts/BuildingPreset.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/RoadScripts/RoadManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameManagerScripts/InputManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/BuildingScripts/BuildingPlacer.cs" />
       </list>
     </option>
   </component>
@@ -110,10 +136,14 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="563" y="191" width="795" height="668" key="find.popup" timestamp="1645765998642">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state x="672" y="89" width="668" height="530" key="find.popup" timestamp="1645796978134">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="450" y="152" width="636" height="530" key="find.popup/0.0.1536.834@0.0.1536.834" timestamp="1645710092100" />
+    <state x="672" y="89" width="668" height="530" key="find.popup/0.0.1536.834@0.0.1536.834" timestamp="1645796978134" />
     <state x="563" y="191" width="795" height="668" key="find.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1645765998642" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1645787421768">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1645787421768" />
   </component>
 </project>

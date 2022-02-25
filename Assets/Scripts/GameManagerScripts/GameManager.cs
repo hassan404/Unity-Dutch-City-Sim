@@ -1,7 +1,4 @@
 ﻿using SVS;
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -12,47 +9,36 @@ public class GameManager : MonoBehaviour
 	public RoadManager roadManager;
 	public InputManager inputManager;
 	public PlacementManager placementManager;
-
 	public UIController uiController;
-
 	public StructureManager structureManager;
+	public static GameManager instance;
+	
+	public enum GameState
+	{
+		RoadBuilding,
+		HouseBuilding,
+	}
 
+	private GameState gameState;
 	private float lastUpdateTime;
-	private void Start()
-	{
-		uiController.OnRoadPlacement += RoadPlacementHandler;
-		uiController.OnHousePlacement += HousePlacementHandler;
-		uiController.OnSpecialPlacement += SpecialPlacementHandler;
 
+	private void Awake()
+	{
+		instance = this;
+	}
+	
+	public void UpdateGameState(GameState newState)
+	{
+		gameState = newState;
 	}
 
-	private void SpecialPlacementHandler()
+	public GameState GetGameState()
 	{
-		ClearInputActions();
-		inputManager.OnMouseClick += structureManager.PlaceSpecial;
-	}
-
-	private void HousePlacementHandler()
-	{
-		ClearInputActions();
-		inputManager.OnMouseClick += structureManager.PlaceHouse;
-	}
-
-	private void RoadPlacementHandler()
-	{
-		ClearInputActions();
-
-		inputManager.OnMouseClick += roadManager.PlaceRoad;
-		inputManager.OnMouseHold += roadManager.PlaceRoad;
-		inputManager.OnMouseUp += roadManager.FinishPlacingRoad;
+		return gameState;
 	}
 
 	public void ClearInputActions()
 	{
-		inputManager.OnMouseClick = null;
-		inputManager.OnMouseHold = null;
-		inputManager.OnMouseUp = null;
-
 		placementManager.StartPlacement();
 	}
 

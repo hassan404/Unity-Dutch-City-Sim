@@ -7,17 +7,12 @@ using TMPro;
 
 public class TimeManager : MonoBehaviour
 {
-	/*public static Action OnMinuteChanged;
-	public static Action OnHourChanged;
-	public static Action OnDayChanged;
-	public static Action OnMonthChanged;
-	public static Action OnYearChanged;*/
 	public static Action OnGameTick;
 
 	public DateTime CurrentDateTime { get; private set; }
 	public static int Minute { get; private set; }
-
 	public GameObject pausedAlert;
+	
 
 	private float inGameTimeRatio = 1f;
 	private float timer;
@@ -38,16 +33,6 @@ public class TimeManager : MonoBehaviour
 	{
 		if (!paused)
 		{
-			// Amount of time since timer started in seconds
-			/*float t = Time.time - startTime;
-
-			string minutes = ((int)t / 60).ToString();
-			string seconds = (t % 60).ToString("f2");
-
-
-
-			timerText.text = minutes + ":" + seconds;*/
-
 			timer -= Time.deltaTime;
 			if (timer <= 0)
 			{

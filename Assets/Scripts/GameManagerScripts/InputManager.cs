@@ -8,17 +8,14 @@ using UnityEngine.EventSystems;
 
 public class InputManager : MonoBehaviour
 {
-	public Action<Vector3Int> OnMouseClick, OnMouseHold;
-	public Action OnMouseUp;
-	private Vector2 cameraMovementVector;
-
+	public LayerMask groundMask;
 	[SerializeField] private Camera mainCamera;
 	[SerializeField] private RoadManager roadManager;
 	[SerializeField] private StructureManager structureManager;
 	[SerializeField] private GameManager gameManager;
-
-	public LayerMask groundMask;
-
+	[SerializeField] private BuildingPlacer buildingPlacer;
+	
+	private Vector2 cameraMovementVector;
 	public Vector2 CameraMovementVector
 	{
 		get { return cameraMovementVector; }
@@ -51,7 +48,8 @@ public class InputManager : MonoBehaviour
 
 	private void CheckClickHoldEvent()
 	{
-		if (Input.GetMouseButton(0) && EventSystem.current.IsPointerOverGameObject() == false)
+		if (!Input.GetMouseButton(0)) return;
+		if (GameManager.instance.GetGameState()== GameManager.GameState.RoadBuilding && EventSystem.current.IsPointerOverGameObject() == false)
 		{
 			var position = RaycastGround();
 			if (position != null)
@@ -60,39 +58,39 @@ public class InputManager : MonoBehaviour
 				var pos = (Vector3Int) position;
 				roadManager.PlaceRoad(pos);
 			}
-
 		}
-	}
-
-	private void CheckClickUpEvent()
-	{
-		//&& EventSystem.current.IsPointerOverGameObject() == false
-		if (Input.GetMouseButtonUp(0) )
-		{
-			gameManager.ClearInputActions();
-			roadManager.FinishPlacingRoad();
-			
-			//OnMouseUp?.Invoke();
-
-			//print("saljem event drzanja misa");
-		}
-	}
-
-	private void CheckClickDownEvent()
-	{
-		//&& EventSystem.current.IsPointerOverGameObject() == false
-		if (Input.GetMouseButtonDown(0) )
+		if (GameManager.instance.GetGameState()== GameManager.GameState.HouseBuilding && EventSystem.current.IsPointerOverGameObject() == false)
 		{
 			var position = RaycastGround();
 			if (position != null)
 			{
 				gameManager.ClearInputActions();
 				var pos = (Vector3Int) position;
-				structureManager.PlaceSpecial(pos);
-				structureManager.PlaceHouse(pos);
+				buildingPlacer.DraggingHouses(pos);
 			}
-				
-			//print("saljem event drzanja misa " + position);
+		}
+	}
+
+	private void CheckClickUpEvent()
+	{
+		if (!Input.GetMouseButtonUp(0)) return;
+		if (GameManager.instance.GetGameState()== GameManager.GameState.RoadBuilding)
+		{
+			gameManager.ClearInputActions();
+			roadManager.FinishPlacingRoad();
+		}
+	}
+
+	private void CheckClickDownEvent()
+	{
+		if (!Input.GetMouseButtonDown(0)) return;
+		if (GameManager.instance.GetGameState()== GameManager.GameState.HouseBuilding )
+		{
+			var position = RaycastGround();
+			if (position != null)
+			{
+				BuildingPlacer.inst.BeginNewBuildingPlacement(City.inst.buildings[0],(Vector3Int) position);
+			}
 		}
 	}
 }

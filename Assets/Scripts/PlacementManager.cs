@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 // Source https://github.com/SunnyValleyStudio/SimpleCityBuilder
@@ -29,11 +27,10 @@ public class PlacementManager : MonoBehaviour
 			lastUpdateTime = Time.time;
 
 			var position = inputManager.RaycastGround();
-			if ((Vector3)position != null)
+			if (position != null)
 			{
 				placementIndicator.transform.position = (Vector3)position;
 			}
-
 		}
 	}
 
@@ -48,7 +45,6 @@ public class PlacementManager : MonoBehaviour
 		currentlyPlacing = false;
 		placementIndicator.SetActive(false);
 	}
-
 
 	internal CellType[] GetNeighbourTypesFor(Vector3Int position)
 	{

@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
 {
-	public Action OnRoadPlacement, OnHousePlacement, OnSpecialPlacement;
 	public Button placeRoadButton, placeHouseButton, placeSpecialButton;
 
 	public Color outlineColor;
@@ -18,23 +17,19 @@ public class UIController : MonoBehaviour
 
 		placeRoadButton.onClick.AddListener(() =>
 		{
-			ResetButtonColor();
-			ModifyOutline(placeRoadButton);
-			OnRoadPlacement?.Invoke();
+			GameManager.instance.ClearInputActions();
+			GameManager.instance.UpdateGameState(GameManager.GameState.RoadBuilding);
 
 		});
 		placeHouseButton.onClick.AddListener(() =>
 		{
-			ResetButtonColor();
-			ModifyOutline(placeHouseButton);
-			OnHousePlacement?.Invoke();
+			GameManager.instance.ClearInputActions();
+			GameManager.instance.UpdateGameState(GameManager.GameState.HouseBuilding);
 
 		});
 		placeSpecialButton.onClick.AddListener(() =>
 		{
-			ResetButtonColor();
-			ModifyOutline(placeSpecialButton);
-			OnSpecialPlacement?.Invoke();
+			
 
 		});
 	}

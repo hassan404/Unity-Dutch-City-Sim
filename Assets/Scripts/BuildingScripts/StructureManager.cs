@@ -22,6 +22,7 @@ public class StructureManager : MonoBehaviour
 	{
 		if (CheckPositionBeforePlacement(position))
 		{
+			print("postavljam kucu ");
 			int randomIndex = GetRandomWeightedIndex(houseWeights);
 			placementManager.PlaceObjectOnTheMap(position, housesPrefabe[randomIndex].prefab, CellType.Structure);
 			//AudioPlayer.instance.PlayPlacementSound();
@@ -33,6 +34,7 @@ public class StructureManager : MonoBehaviour
 	{
 		if (CheckPositionBeforePlacement(position))
 		{
+			print("postavljam specijal ");
 			int randomIndex = GetRandomWeightedIndex(specialWeights);
 			placementManager.PlaceObjectOnTheMap(position, specialPrefabs[randomIndex].prefab, CellType.Structure);
 			//AudioPlayer.instance.PlayPlacementSound();

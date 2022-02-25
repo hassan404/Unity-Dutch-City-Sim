@@ -21,7 +21,7 @@ public class City : MonoBehaviour
 
 	public TextMeshProUGUI statsText;
 
-	private List<BuildingPreset> buildings = new List<BuildingPreset>();
+	public List<BuildingPreset> buildings = new List<BuildingPreset>();
 
 	public static City inst;
 

@@ -59,6 +59,7 @@
      <Compile Include="Assets\Scripts\BuildingScripts\BuildingPreset.cs" />
      <Compile Include="Assets\Scripts\Selector.cs" />
      <Compile Include="Assets\Scripts\BuildingScripts\StructureManager.cs" />
+     <Compile Include="Assets\Scripts\UIScripts\MainMenuController.cs" />
      <Reference Include="UnityEngine">
      <HintPath>C:/Program Files/Unity 2021.2.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
      </Reference>
@@ -703,10 +704,6 @@
      </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{b4171a7a-badc-2962-d521-cbd151dc55f7}</Project>
-      <Name>Assembly-CSharp-firstpass</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
