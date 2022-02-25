@@ -31,7 +31,7 @@ public class BuildingPlacer : MonoBehaviour
 		if (Time.time - lastUpdateTime > placementIndicatorUpdateRate && currentlyPlacing)
 		{
 			lastUpdateTime = Time.time;
-
+			print("pomeram indikator ");
 			curPlacementPos = Selector.inst.GetCurTilePosition();
 			placementIndicator.transform.position = curPlacementPos;
 		}
@@ -82,6 +82,7 @@ public class BuildingPlacer : MonoBehaviour
 
 	public void CancelBuildingPlacement()
 	{
+		print("kanselujem building placement");
 		currentlyPlacing = false;
 		placementIndicator.SetActive(false);
 	}
