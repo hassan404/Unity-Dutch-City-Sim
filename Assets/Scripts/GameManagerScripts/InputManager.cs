@@ -74,22 +74,29 @@ public class InputManager : MonoBehaviour
 	private void CheckClickUpEvent()
 	{
 		if (!Input.GetMouseButtonUp(0)) return;
+		print("POZICIJA GORE JE " + RaycastGround());
 		if (GameManager.instance.GetGameState()== GameManager.GameState.RoadBuilding)
 		{
 			gameManager.ClearInputActions();
 			roadManager.FinishPlacingRoad();
+		}
+		if (GameManager.instance.GetGameState()== GameManager.GameState.HouseBuilding)
+		{
+			gameManager.ClearInputActions();
+			BuildingPlacer.inst.FinishBuildingHouse();
 		}
 	}
 
 	private void CheckClickDownEvent()
 	{
 		if (!Input.GetMouseButtonDown(0)) return;
+		print("POZICIJA DOLE JE " + RaycastGround());
 		if (GameManager.instance.GetGameState()== GameManager.GameState.HouseBuilding )
 		{
 			var position = RaycastGround();
 			if (position != null)
 			{
-				BuildingPlacer.inst.BeginNewBuildingPlacement(City.inst.buildings[0],(Vector3Int) position);
+				BuildingPlacer.inst.BeginNewBuildingPlacement(City.inst.buildings[1],(Vector3Int) position);
 			}
 		}
 	}

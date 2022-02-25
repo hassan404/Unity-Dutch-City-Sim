@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using PathologicalGames;
 using UnityEngine;
 
 public class BuildingPlacer : MonoBehaviour
@@ -8,7 +9,7 @@ public class BuildingPlacer : MonoBehaviour
     [SerializeField] private PlacementManager placementManager;
 
     public static BuildingPlacer inst;
-    private bool currentlyPlacing;
+    public bool currentlyPlacing;
     private BuildingPreset curBuildingPreset;
     private float placementIndicatorUpdateRate = 0.05f;
     private float lastUpdateTime;
@@ -18,6 +19,8 @@ public class BuildingPlacer : MonoBehaviour
     private bool firstClick = true;
     private List<Vector3Int> temporaryPlacementPositions = new List<Vector3Int>();
     private Vector3Int startingPosition;
+    
+    public List<Vector3Int> debugList= new List<Vector3Int>();
 
     void Awake()
     {
@@ -74,6 +77,7 @@ public class BuildingPlacer : MonoBehaviour
 
     public void DraggingHouses(Vector3 pos)
     {
+        if (currentlyPlacing == false) return;
         placementManager.RemoveAllTemporaryStructures();
         temporaryPlacementPositions.Clear();
         MakeAListBetweenPositions(startingPosition,new Vector3Int((int) pos.x,0,(int) pos.z));
@@ -85,6 +89,10 @@ public class BuildingPlacer : MonoBehaviour
                 continue;
             }
             placementManager.PlaceTemporaryStructure(temporaryPosition, curBuildingPreset.prefab, CellType.Structure);
+            if (!debugList.Contains(temporaryPosition))
+            {
+                debugList.Add(temporaryPosition);
+            }
         }
     }
 
@@ -99,9 +107,9 @@ public class BuildingPlacer : MonoBehaviour
         var zFactor = 1;
         if (zDifference < 0)  zFactor = -1;
 
-        for (int i = 0; i < xAbsolute + 1; i++)
+        for (int i = 0; i < xAbsolute+1; i++)
         {
-            for (int j = 0; j < zAbsolute + 1; j++)
+            for (int j = 0; j < zAbsolute+1; j++)
             {
                 temporaryPlacementPositions.Add(new Vector3Int(start.x - i*xFactor, 0, start.z - j*zFactor));
             }
@@ -117,9 +125,21 @@ public class BuildingPlacer : MonoBehaviour
         startingPosition = pos;
     }
 
+    public void FinishBuildingHouse()
+    {
+        currentlyPlacing = false;
+        placementManager.AddtemporaryStructuresToStructureDictionary();
+        foreach (var pos in temporaryPlacementPositions)
+        {
+            //var spawn=PoolManager.Pools["Buildings"].Spawn(curBuildingPreset.prefab);
+           // spawn.position = pos;
+//              print("spawnujem " + curBuildingPreset.prefab);
+        }
+        temporaryPlacementPositions.Clear();
+    }
+
     public void CancelBuildingPlacement()
     {
-        print("kanselujem building placement");
         currentlyPlacing = false;
         placementIndicator.SetActive(false);
     }
