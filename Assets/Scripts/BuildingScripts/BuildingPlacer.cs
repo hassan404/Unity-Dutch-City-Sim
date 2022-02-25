@@ -88,7 +88,7 @@ public class BuildingPlacer : MonoBehaviour
             {
                 continue;
             }
-            placementManager.PlaceTemporaryStructure(temporaryPosition, curBuildingPreset.prefab, CellType.Structure);
+            placementManager.PlaceTemporaryStructure(temporaryPosition, curBuildingPreset.prefab, CellType.House);
             if (!debugList.Contains(temporaryPosition))
             {
                 debugList.Add(temporaryPosition);
@@ -102,7 +102,7 @@ public class BuildingPlacer : MonoBehaviour
         if (placementManager.CheckIfPositionIsFree(new Vector3Int((int) pos.x,0,(int) pos.z)) == false)  return;
         placementManager.RemoveAllTemporaryStructures();
         temporaryPlacementPositions.Clear();
-        placementManager.PlaceTemporaryStructure(new Vector3Int((int) pos.x,0,(int) pos.z), curBuildingPreset.prefab, CellType.Structure);
+        placementManager.PlaceTemporaryStructure(new Vector3Int((int) pos.x,0,(int) pos.z), curBuildingPreset.prefab, CellType.Building);
     }
 
     private void MakeAListBetweenPositions(Vector3Int start, Vector3Int end)

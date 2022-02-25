@@ -11,6 +11,7 @@ public class InputManager : MonoBehaviour
 	[SerializeField] private StructureManager structureManager;
 	[SerializeField] private GameManager gameManager;
 	[SerializeField] private BuildingPlacer buildingPlacer;
+	[SerializeField] private PlacementManager placementManager;
 	
 	private Vector2 cameraMovementVector;
 	public Vector2 CameraMovementVector
@@ -24,6 +25,7 @@ public class InputManager : MonoBehaviour
 		CheckClickUpEvent();
 		CheckClickHoldEvent();
 		CheckArrowInput();
+		SpawnPeople();
 	}
 
 	public Vector3Int? RaycastGround()
@@ -102,6 +104,21 @@ public class InputManager : MonoBehaviour
 			if (position != null)
 			{
 				BuildingPlacer.inst.BeginNewBuildingPlacement(City.inst.buildings[City.inst.indexOfSelectedBuilding],(Vector3Int) position);
+			}
+		}
+	}
+	private void SpawnPeople()
+	{
+		if (!Input.GetKeyDown(KeyCode.Space)) return;
+		if (GameManager.instance.GetGameState()!= GameManager.GameState.RoadBuilding )
+		{
+			foreach (var a in placementManager.structureDictionary)
+			{
+				var b=placementManager.placementGrid[a.Key.x, a.Key.z];
+				if (b == CellType.Building)
+				{
+					print("zgrada je " + a.Value.name);
+				}
 			}
 		}
 	}

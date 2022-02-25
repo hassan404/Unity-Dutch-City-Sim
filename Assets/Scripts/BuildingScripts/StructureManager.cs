@@ -1,7 +1,4 @@
-﻿using SVS;
-using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using System.Linq;
 using UnityEngine;
 
@@ -16,30 +13,6 @@ public class StructureManager : MonoBehaviour
 	{
 		houseWeights = housesPrefabe.Select(prefabStats => prefabStats.weight).ToArray();
 		specialWeights = specialPrefabs.Select(prefabStats => prefabStats.weight).ToArray();
-	}
-
-	public void PlaceHouse(Vector3Int position)
-	{
-		if (CheckPositionBeforePlacement(position))
-		{
-			print("postavljam kucu ");
-			int randomIndex = GetRandomWeightedIndex(houseWeights);
-			placementManager.PlaceObjectOnTheMap(position, housesPrefabe[randomIndex].prefab, CellType.Structure);
-			//AudioPlayer.instance.PlayPlacementSound();
-			placementManager.EndPlacement();
-		}
-	}
-
-	public void PlaceSpecial(Vector3Int position)
-	{
-		if (CheckPositionBeforePlacement(position))
-		{
-			print("postavljam specijal ");
-			int randomIndex = GetRandomWeightedIndex(specialWeights);
-			placementManager.PlaceObjectOnTheMap(position, specialPrefabs[randomIndex].prefab, CellType.Structure);
-			//AudioPlayer.instance.PlayPlacementSound();
-			placementManager.EndPlacement();
-		}
 	}
 
 	private int GetRandomWeightedIndex(float[] weights)
@@ -85,8 +58,7 @@ public class StructureManager : MonoBehaviour
 	}
 }
 
-[Serializable]
-public struct StructurePrefabWeighted
+[Serializable] public struct StructurePrefabWeighted
 {
 	public GameObject prefab;
 	[Range(0, 1)]

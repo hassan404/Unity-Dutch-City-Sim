@@ -5,6 +5,13 @@
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="Art" t="Include">
+          <e p="Snowconesolid Assets" t="Include">
+            <e p="Block People" t="Include">
+              <e p="Snowconesolid Assets ReadMe.txt" t="Include" />
+            </e>
+          </e>
+        </e>
         <e p="Plugins" t="Include">
           <e p="PathologicalGames" t="Include">
             <e p="PoolManager" t="Include">

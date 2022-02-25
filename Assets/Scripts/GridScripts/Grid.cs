@@ -50,8 +50,8 @@ public enum CellType
 {
     Empty,
     Road,
-    Structure,
-    SpecialStructure,
+    House,
+    Building,
     None
 }
 
@@ -90,7 +90,7 @@ public class Grid
             {
                 _roadList.Remove(new Point(i, j));
             }
-            if (value == CellType.SpecialStructure)
+            if (value == CellType.None)
             {
                 _specialStructure.Add(new Point(i, j));
             }

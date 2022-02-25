@@ -8,15 +8,15 @@ using UnityEngine;
 public class PlacementManager : MonoBehaviour
 {
 	public int width, height;
-	Grid placementGrid;
+	public Grid placementGrid;
 	public InputManager inputManager;
 	private float placementIndicatorUpdateRate = 0.05f;
 	private float lastUpdateTime;
 	public GameObject placementIndicator;
 	private bool currentlyPlacing;
 
-	private Dictionary<Vector3Int, StructureModel> temporaryRoadobjects = new Dictionary<Vector3Int, StructureModel>();
-	private Dictionary<Vector3Int, StructureModel> structureDictionary = new Dictionary<Vector3Int, StructureModel>();
+	public Dictionary<Vector3Int, StructureModel> temporaryRoadobjects = new Dictionary<Vector3Int, StructureModel>();
+	public Dictionary<Vector3Int, StructureModel> structureDictionary = new Dictionary<Vector3Int, StructureModel>();
 
 	private void Start()
 	{
