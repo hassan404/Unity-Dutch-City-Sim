@@ -43,12 +43,12 @@ public class RoadManager : MonoBehaviour
 
 			//temporaryPlacementPositions.Add(position);
 			//placementManager.PlaceTemporaryStructure(position, roadFixer.deadEnd, CellType.Road);
-			print("postavljam novi put na " + position + " " + roadFixer.deadEnd);
+//			print("postavljam novi put na " + position + " " + roadFixer.deadEnd);
 
 		}
 		else
 		{
-			print("usao u brisanje puteva i ponovno crtanje ");
+//			print("usao u brisanje puteva i ponovno crtanje ");
 			placementManager.RemoveAllTemporaryStructures();
 			temporaryPlacementPositions.Clear();
 
