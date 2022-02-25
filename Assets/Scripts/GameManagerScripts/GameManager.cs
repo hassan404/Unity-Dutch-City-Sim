@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
 	{
 		RoadBuilding,
 		HouseBuilding,
+		SingleStructure
 	}
 
 	private GameState gameState;

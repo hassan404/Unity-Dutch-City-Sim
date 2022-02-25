@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
+using PathologicalGames;
 using UnityEngine;
 
 // Source https://github.com/SunnyValleyStudio/SimpleCityBuilder
@@ -108,10 +110,9 @@ public class PlacementManager : MonoBehaviour
 
 	private StructureModel CreateANewStructureModel(Vector3Int position, GameObject structurePrefab, CellType type)
 	{
-		GameObject structure = new GameObject(type.ToString());
-		structure.transform.SetParent(transform);
-		structure.transform.localPosition = position;
-		var structureModel = structure.AddComponent<StructureModel>();
+		var structure = Instantiate(structurePrefab).transform;
+		structure.position = position;
+		var structureModel = structure.gameObject.AddComponent<StructureModel>();
 		structureModel.CreateModel(structurePrefab);
 		return structureModel;
 	}
@@ -133,6 +134,7 @@ public class PlacementManager : MonoBehaviour
 		{
 			var position = Vector3Int.RoundToInt(structure.transform.position);
 			placementGrid[position.x, position.z] = CellType.Empty;
+			//PoolManager.Pools["Buildings"].Despawn(structure.transform);
 			Destroy(structure.gameObject);
 		}
 		temporaryRoadobjects.Clear();
@@ -142,6 +144,7 @@ public class PlacementManager : MonoBehaviour
 	{
 		foreach (var structure in temporaryRoadobjects)
 		{
+			print("dodajem strukturu " + structure.Key+" "+structure.Value);
 			structureDictionary.Add(structure.Key, structure.Value);
 			DestroyNatureAt(structure.Key);
 		}

@@ -24,6 +24,7 @@ public class City : MonoBehaviour
 	public List<BuildingPreset> buildings = new List<BuildingPreset>();
 
 	public static City inst;
+	public int indexOfSelectedBuilding;
 
 	void Awake()
 	{
@@ -48,7 +49,6 @@ public class City : MonoBehaviour
 		CalculateFood();
 		currentDate = currentDate.AddDays(1);
 		string formattedDate = CalculateDate();
-
 		statsText.text = string.Format("ƒ {0}     Pop {1}     {2}     Turn{3}", new object[4] { money, curPopulation, formattedDate, turnsElapsed });
 	}
 

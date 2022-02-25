@@ -95,6 +95,15 @@ public class BuildingPlacer : MonoBehaviour
             }
         }
     }
+    
+    public void DraggingSingleBuilding(Vector3 pos)
+    {
+        if (currentlyPlacing == false) return;
+        if (placementManager.CheckIfPositionIsFree(new Vector3Int((int) pos.x,0,(int) pos.z)) == false)  return;
+        placementManager.RemoveAllTemporaryStructures();
+        temporaryPlacementPositions.Clear();
+        placementManager.PlaceTemporaryStructure(new Vector3Int((int) pos.x,0,(int) pos.z), curBuildingPreset.prefab, CellType.Structure);
+    }
 
     private void MakeAListBetweenPositions(Vector3Int start, Vector3Int end)
     {
@@ -129,26 +138,12 @@ public class BuildingPlacer : MonoBehaviour
     {
         currentlyPlacing = false;
         placementManager.AddtemporaryStructuresToStructureDictionary();
-        foreach (var pos in temporaryPlacementPositions)
-        {
-            //var spawn=PoolManager.Pools["Buildings"].Spawn(curBuildingPreset.prefab);
-           // spawn.position = pos;
-//              print("spawnujem " + curBuildingPreset.prefab);
-        }
-        temporaryPlacementPositions.Clear();
+         temporaryPlacementPositions.Clear();
     }
 
     public void CancelBuildingPlacement()
     {
         currentlyPlacing = false;
         placementIndicator.SetActive(false);
-    }
-
-    void PlaceBuilding()
-    {
-        print("postavljam zgradu ");
-        GameObject buildingObj = Instantiate(curBuildingPreset.prefab, curPlacementPos, Quaternion.identity);
-        City.inst.OnPlaceBuilding(curBuildingPreset);
-        CancelBuildingPlacement();
     }
 }

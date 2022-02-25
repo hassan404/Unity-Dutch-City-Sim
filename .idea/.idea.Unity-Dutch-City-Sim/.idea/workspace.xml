@@ -25,16 +25,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="09620ce4-954e-41e8-8092-40c8ce675628" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity-Dutch-City-Sim/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity-Dutch-City-Sim/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity-Dutch-City-Sim/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity-Dutch-City-Sim/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assembly-CSharp-firstpass.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp-firstpass.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Building_House.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Building_House.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/BuildingScripts/BuildingPlacer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BuildingScripts/BuildingPlacer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManagerScripts/City.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManagerScripts/City.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManagerScripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManagerScripts/GameManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManagerScripts/InputManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManagerScripts/InputManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RoadScripts/RoadManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RoadScripts/RoadManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlacementManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlacementManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UIScripts/UIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UIScripts/UIController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +47,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManagerScripts/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UIScripts/MainMenuController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/Shaders/TMP_Sprite.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GridScripts/Grid.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UIScripts/UIController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/Shaders/TMP_SDF.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/RoadScripts/RoadFixer.cs" root0="FORCE_HIGHLIGHTING" />
@@ -81,16 +80,16 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/RoadScripts/RoadFixer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/BuildingScripts/StructureModel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UIScripts/MainMenuController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameManagerScripts/GameManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UIScripts/UIController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameManagerScripts/TimeManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/BuildingScripts/StructureManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameManagerScripts/City.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/BuildingScripts/BuildingPreset.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/RoadScripts/RoadManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/PlacementManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameManagerScripts/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameManagerScripts/InputManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlacementManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameManagerScripts/City.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/BuildingScripts/BuildingPlacer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UIScripts/UIController.cs" />
       </list>
     </option>
   </component>
@@ -130,7 +129,7 @@
       <updated>1645698944155</updated>
       <workItem from="1645699194966" duration="9576000" />
       <workItem from="1645763391647" duration="1004000" />
-      <workItem from="1645806254186" duration="3164000" />
+      <workItem from="1645806254186" duration="6558000" />
     </task>
     <servers />
   </component>
@@ -156,11 +155,11 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="92" y="92" width="1736" height="866" key="VCS.FileHistoryDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1645808317025" />
-    <state x="563" y="191" width="795" height="668" key="find.popup" timestamp="1645809140906">
+    <state x="563" y="191" width="795" height="668" key="find.popup" timestamp="1645811695981">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="672" y="89" width="668" height="530" key="find.popup/0.0.1536.834@0.0.1536.834" timestamp="1645796978134" />
-    <state x="563" y="191" width="795" height="668" key="find.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1645809140906" />
+    <state x="563" y="191" width="795" height="668" key="find.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1645811695981" />
     <state x="539" y="195" width="840" height="854" key="search.everywhere.popup" timestamp="1645807722946">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

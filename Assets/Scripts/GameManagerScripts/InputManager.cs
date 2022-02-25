@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
 // Source https://github.com/SunnyValleyStudio/SimpleCityBuilder
@@ -69,18 +66,27 @@ public class InputManager : MonoBehaviour
 				buildingPlacer.DraggingHouses(pos);
 			}
 		}
+		if (GameManager.instance.GetGameState()== GameManager.GameState.SingleStructure && EventSystem.current.IsPointerOverGameObject() == false)
+		{
+			var position = RaycastGround();
+			if (position != null)
+			{
+				gameManager.ClearInputActions();
+				var pos = (Vector3Int) position;
+				buildingPlacer.DraggingSingleBuilding(pos);
+			}
+		}
 	}
 
 	private void CheckClickUpEvent()
 	{
 		if (!Input.GetMouseButtonUp(0)) return;
-		print("POZICIJA GORE JE " + RaycastGround());
-		if (GameManager.instance.GetGameState()== GameManager.GameState.RoadBuilding)
+		if (GameManager.instance.GetGameState() == GameManager.GameState.RoadBuilding)
 		{
 			gameManager.ClearInputActions();
 			roadManager.FinishPlacingRoad();
 		}
-		if (GameManager.instance.GetGameState()== GameManager.GameState.HouseBuilding)
+		if (GameManager.instance.GetGameState() != GameManager.GameState.RoadBuilding)
 		{
 			gameManager.ClearInputActions();
 			BuildingPlacer.inst.FinishBuildingHouse();
@@ -90,13 +96,12 @@ public class InputManager : MonoBehaviour
 	private void CheckClickDownEvent()
 	{
 		if (!Input.GetMouseButtonDown(0)) return;
-		print("POZICIJA DOLE JE " + RaycastGround());
-		if (GameManager.instance.GetGameState()== GameManager.GameState.HouseBuilding )
+		if (GameManager.instance.GetGameState()!= GameManager.GameState.RoadBuilding )
 		{
 			var position = RaycastGround();
 			if (position != null)
 			{
-				BuildingPlacer.inst.BeginNewBuildingPlacement(City.inst.buildings[1],(Vector3Int) position);
+				BuildingPlacer.inst.BeginNewBuildingPlacement(City.inst.buildings[City.inst.indexOfSelectedBuilding],(Vector3Int) position);
 			}
 		}
 	}
