@@ -25,17 +25,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="09620ce4-954e-41e8-8092-40c8ce675628" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity-Dutch-City-Sim/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity-Dutch-City-Sim/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity-Dutch-City-Sim/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity-Dutch-City-Sim/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assembly-CSharp-firstpass.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp-firstpass.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Blocky_Dude_Blue_Mobile.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Blocky_Dude_Blue_Mobile.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManagerScripts/InputManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManagerScripts/InputManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GridScripts/Grid.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GridScripts/Grid.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlacementManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlacementManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/WalkerScripts/WalkerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WalkerScripts/WalkerMovement.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,8 +91,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/PlacementManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GridScripts/Grid.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Utility.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/WalkerScripts/WalkerMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/WalkerScripts/SpawnWalkers.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/WalkerScripts/WalkerMovement.cs" />
       </list>
     </option>
   </component>
@@ -142,7 +133,7 @@
       <workItem from="1645699194966" duration="9576000" />
       <workItem from="1645763391647" duration="1004000" />
       <workItem from="1645806254186" duration="8564000" />
-      <workItem from="1645841009822" duration="10460000" />
+      <workItem from="1645841009822" duration="12319000" />
     </task>
     <servers />
   </component>

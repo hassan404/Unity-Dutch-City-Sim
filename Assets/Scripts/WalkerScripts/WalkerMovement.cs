@@ -9,11 +9,18 @@ namespace WalkerScripts
         public Vector3Int targetPosition;
         public List<Vector3Int> moveList = new List<Vector3Int>();
         public float speed = 2;
+        [SerializeField] private Vector3 lookRotation;
 
         private void Update()
         {
             var step = speed * Time.deltaTime;
-            transform.position = Vector3.MoveTowards(transform.position, targetPosition, step);
+            var currentPos = transform.position;
+            transform.position = Vector3.MoveTowards(currentPos, targetPosition, step);
+            var difference = targetPosition - currentPos;
+            if (difference != Vector3.zero)
+            {
+                transform.rotation=Quaternion.LookRotation(targetPosition - currentPos);
+            }
             if (Vector3.Distance(transform.position, targetPosition) < 0.001f)
             {
                 if (!moveList.Contains(targetPosition))
