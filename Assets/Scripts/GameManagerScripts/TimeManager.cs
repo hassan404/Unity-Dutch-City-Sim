@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using System;
+using System.Text;
 using TMPro;
 
 public class TimeManager : MonoBehaviour
@@ -18,6 +16,8 @@ public class TimeManager : MonoBehaviour
 	private float timer;
 	private float startTime;
 	private bool paused;
+
+	public TextMeshProUGUI gameSpeedText;
 
 	void Start()
 	{
@@ -50,6 +50,25 @@ public class TimeManager : MonoBehaviour
 		paused = !paused; // Toggles between paused and not paused.
 
 		pausedAlert?.SetActive(paused); // false to hide, true to show
+	}
+
+	public void GameSpeedButton()
+	{
+		switch (gameSpeedText.text)
+		{
+			case "Normal":
+				gameSpeedText.SetText("Fast");
+				Time.timeScale = 1.5f;
+				break;
+			case "Fast":
+				gameSpeedText.SetText("Faster");
+				Time.timeScale = 2f;
+				break;
+			case "Faster":
+				gameSpeedText.SetText("Normal");
+				Time.timeScale = 1f;
+				break;
+		}
 	}
 
 }
