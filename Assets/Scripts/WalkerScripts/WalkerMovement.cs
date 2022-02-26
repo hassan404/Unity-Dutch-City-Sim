@@ -9,7 +9,6 @@ namespace WalkerScripts
         public Vector3Int targetPosition;
         public List<Vector3Int> moveList = new List<Vector3Int>();
         public float speed = 2;
-        [SerializeField] private Vector3 lookRotation;
 
         private void Update()
         {

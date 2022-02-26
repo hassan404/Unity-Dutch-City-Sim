@@ -120,9 +120,10 @@ public class PlacementManager : MonoBehaviour
 	private StructureModel CreateANewStructureModel(Vector3Int position, GameObject structurePrefab, CellType type)
 	{
 		var structure = Instantiate(structurePrefab).transform;
+		print("pravi se " + structurePrefab.name);
 		structure.position = position;
 		var structureModel = structure.gameObject.AddComponent<StructureModel>();
-		structureModel.CreateModel(structurePrefab);
+		//structureModel.CreateModel(structurePrefab);
 		return structureModel;
 	}
 

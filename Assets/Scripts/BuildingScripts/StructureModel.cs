@@ -4,11 +4,14 @@ public class StructureModel : MonoBehaviour
 {
     float yHeight = 0;
 
+    /*
     public void CreateModel(GameObject model)
     {
+        print("pravi se " + model.name);
         var structure = Instantiate(model, transform);
         yHeight = structure.transform.position.y;
     }
+    */
 
     public void SwapModel(GameObject model, Quaternion rotation)
     {
@@ -16,6 +19,8 @@ public class StructureModel : MonoBehaviour
         {
             Destroy(child.gameObject);
         }
+
+        print("pravi se " + model.name);
         var structure = Instantiate(model, transform);
         structure.transform.localPosition = new Vector3(0, yHeight, 0);
         structure.transform.localRotation = rotation;
