@@ -25,9 +25,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="09620ce4-954e-41e8-8092-40c8ce675628" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity-Dutch-City-Sim/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity-Dutch-City-Sim/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity-Dutch-City-Sim/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity-Dutch-City-Sim/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Blocky_Dude_Blue_Mobile.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Blocky_Dude_Blue_Mobile.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Blocky_Girl_Blue_Mobile_2.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Blocky_Girl_Blue_Mobile_2.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManagerScripts/TimeManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManagerScripts/TimeManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +71,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/PathologicalGames/PoolManager/PreRuntimePoolItem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/PathologicalGames/PoolManager/PoolManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AudioPlayer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UIScripts/OpenBriefManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utility.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CameraScripts/CameraMovement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManagerScripts/InputManager.cs" root0="FORCE_HIGHLIGHTING" />
@@ -94,6 +102,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/PlacementManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/BuildingScripts/StructureModel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameManagerScripts/TimeManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UIScripts/OpenBriefManager.cs" />
       </list>
     </option>
   </component>
@@ -165,10 +174,10 @@
     </state>
     <state x="672" y="89" width="668" height="530" key="find.popup/0.0.1536.834@0.0.1536.834" timestamp="1645796978134" />
     <state x="563" y="191" width="795" height="668" key="find.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1645908101427" />
-    <state x="539" y="195" width="840" height="854" key="search.everywhere.popup" timestamp="1645846564979">
+    <state x="539" y="195" width="840" height="854" key="search.everywhere.popup" timestamp="1645908815337">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1645787421768" />
-    <state x="539" y="195" width="840" height="854" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1645846564979" />
+    <state x="539" y="195" width="840" height="854" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1645908815337" />
   </component>
 </project>

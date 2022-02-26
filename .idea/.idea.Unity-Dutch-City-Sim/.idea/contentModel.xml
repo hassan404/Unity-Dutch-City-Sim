@@ -83,6 +83,7 @@
           <e p="Selector.cs" t="Include" />
           <e p="UIScripts" t="Include">
             <e p="MainMenuController.cs" t="Include" />
+            <e p="OpenBriefManager.cs" t="Include" />
             <e p="UIController.cs" t="Include" />
           </e>
           <e p="Utility.cs" t="Include" />
