@@ -119,10 +119,11 @@ public class PlacementManager : MonoBehaviour
 
 	private StructureModel CreateANewStructureModel(Vector3Int position, GameObject structurePrefab, CellType type)
 	{
-		var structure = Instantiate(structurePrefab).transform;
+		//var structure = Instantiate(structurePrefab).transform;
+		var structure = PoolManager.Pools["Buildings"].Spawn(structurePrefab);
 		print("pravi se " + structurePrefab.name);
 		structure.position = position;
-		var structureModel = structure.gameObject.AddComponent<StructureModel>();
+		var structureModel = structure.gameObject.GetComponent<StructureModel>();
 		//structureModel.CreateModel(structurePrefab);
 		return structureModel;
 	}
@@ -144,8 +145,9 @@ public class PlacementManager : MonoBehaviour
 		{
 			var position = Vector3Int.RoundToInt(structure.transform.position);
 			placementGrid[position.x, position.z] = CellType.Empty;
-			//PoolManager.Pools["Buildings"].Despawn(structure.transform);
-			Destroy(structure.gameObject);
+			print("usao u petlju ");
+			PoolManager.Pools["Buildings"].Despawn(structure.transform);
+			//Destroy(structure.gameObject);
 		}
 		temporaryRoadobjects.Clear();
 	}
