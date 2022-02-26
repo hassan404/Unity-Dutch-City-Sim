@@ -49,6 +49,9 @@
               <e p="EmojiOne.json" t="Include" />
             </e>
           </e>
+          <e p="Trinary Software" t="Include">
+            <e p="Timing.cs" t="Include" />
+          </e>
         </e>
         <e p="Scripts" t="Include">
           <e p="AudioPlayer.cs" t="Include" />
@@ -81,6 +84,11 @@
           <e p="UIScripts" t="Include">
             <e p="MainMenuController.cs" t="Include" />
             <e p="UIController.cs" t="Include" />
+          </e>
+          <e p="Utility.cs" t="Include" />
+          <e p="WalkerScripts" t="Include">
+            <e p="SpawnWalkers.cs" t="Include" />
+            <e p="WalkerMovement.cs" t="Include" />
           </e>
         </e>
       </e>

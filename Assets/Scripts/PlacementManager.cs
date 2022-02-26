@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using PathologicalGames;
 using UnityEngine;
@@ -17,6 +18,14 @@ public class PlacementManager : MonoBehaviour
 
 	public Dictionary<Vector3Int, StructureModel> temporaryRoadobjects = new Dictionary<Vector3Int, StructureModel>();
 	public Dictionary<Vector3Int, StructureModel> structureDictionary = new Dictionary<Vector3Int, StructureModel>();
+
+	public static PlacementManager inst;
+
+
+	private void Awake()
+	{
+		inst = this;
+	}
 
 	private void Start()
 	{
@@ -144,7 +153,7 @@ public class PlacementManager : MonoBehaviour
 	{
 		foreach (var structure in temporaryRoadobjects)
 		{
-			print("dodajem strukturu " + structure.Key+" "+structure.Value);
+//			print("dodajem strukturu " + structure.Key+" "+structure.Value);
 			structureDictionary.Add(structure.Key, structure.Value);
 			DestroyNatureAt(structure.Key);
 		}

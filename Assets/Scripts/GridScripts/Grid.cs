@@ -102,7 +102,7 @@ public class Grid
         }
     }
 
-    public static bool IsCellWakable(CellType cellType, bool aiAgent = false)
+    public static bool IsCellWalkable(CellType cellType, bool aiAgent = false)
     {
         if (aiAgent)
         {
@@ -125,7 +125,7 @@ public class Grid
 
     public List<Point> GetAdjacentCells(Point cell, bool isAgent)
     {
-        return GetWakableAdjacentCells((int)cell.X, (int)cell.Y, isAgent);
+        return GetWalkableAdjacentCells((int)cell.X, (int)cell.Y, isAgent);
     }
 
     public float GetCostOfEnteringCell(Point cell)
@@ -155,12 +155,12 @@ public class Grid
         return adjacentCells;
     }
 
-    public List<Point> GetWakableAdjacentCells(int x, int y, bool isAgent)
+    public List<Point> GetWalkableAdjacentCells(int x, int y, bool isAgent)
     {
         List<Point> adjacentCells = GetAllAdjacentCells(x, y);
         for (int i = adjacentCells.Count - 1; i >= 0; i--)
         {
-            if(IsCellWakable(_grid[adjacentCells[i].X, adjacentCells[i].Y], isAgent)==false)
+            if(IsCellWalkable(_grid[adjacentCells[i].X, adjacentCells[i].Y], isAgent)==false)
             {
                 adjacentCells.RemoveAt(i);
             }

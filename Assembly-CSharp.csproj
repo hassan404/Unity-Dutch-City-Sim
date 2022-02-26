@@ -60,6 +60,9 @@
      <Compile Include="Assets\Scripts\BuildingScripts\BuildingPreset.cs" />
      <Compile Include="Assets\Scripts\Selector.cs" />
      <Compile Include="Assets\Scripts\BuildingScripts\StructureManager.cs" />
+     <Compile Include="Assets\Scripts\WalkerScripts\SpawnWalkers.cs" />
+     <Compile Include="Assets\Scripts\WalkerScripts\WalkerMovement.cs" />
+     <Compile Include="Assets\Scripts\Utility.cs" />
      <None Include="Assets\Art\Snowconesolid Assets\Block People\Snowconesolid Assets ReadMe.txt" />
      <Reference Include="UnityEngine">
      <HintPath>C:/Program Files/Unity/Hub/Editor/2021.2.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

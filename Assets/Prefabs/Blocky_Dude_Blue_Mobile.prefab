@@ -4171,6 +4171,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 414092}
+  - component: {fileID: -3682296807083599081}
   - component: {fileID: 9577870}
   m_Layer: 0
   m_Name: Blocky_Dude_Blue_Mobile
@@ -4196,6 +4197,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-3682296807083599081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 135870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 084a4c3f2e57fc148bd7197816fa7fd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &9577870
 Animator:
   serializedVersion: 4
