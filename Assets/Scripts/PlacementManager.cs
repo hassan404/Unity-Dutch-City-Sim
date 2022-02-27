@@ -1,6 +1,7 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using PathologicalGames;
 using UnityEngine;
 
 // Source https://github.com/SunnyValleyStudio/SimpleCityBuilder
@@ -8,15 +9,23 @@ using UnityEngine;
 public class PlacementManager : MonoBehaviour
 {
 	public int width, height;
-	Grid placementGrid;
+	public Grid placementGrid;
 	public InputManager inputManager;
 	private float placementIndicatorUpdateRate = 0.05f;
 	private float lastUpdateTime;
 	public GameObject placementIndicator;
 	private bool currentlyPlacing;
 
-	private Dictionary<Vector3Int, StructureModel> temporaryRoadobjects = new Dictionary<Vector3Int, StructureModel>();
-	private Dictionary<Vector3Int, StructureModel> structureDictionary = new Dictionary<Vector3Int, StructureModel>();
+	public Dictionary<Vector3Int, StructureModel> temporaryRoadobjects = new Dictionary<Vector3Int, StructureModel>();
+	public Dictionary<Vector3Int, StructureModel> structureDictionary = new Dictionary<Vector3Int, StructureModel>();
+
+	public static PlacementManager inst;
+
+
+	private void Awake()
+	{
+		inst = this;
+	}
 
 	private void Start()
 	{
@@ -29,11 +38,10 @@ public class PlacementManager : MonoBehaviour
 			lastUpdateTime = Time.time;
 
 			var position = inputManager.RaycastGround();
-			if ((Vector3)position != null)
+			if (position != null)
 			{
 				placementIndicator.transform.position = (Vector3)position;
 			}
-
 		}
 	}
 
@@ -48,7 +56,6 @@ public class PlacementManager : MonoBehaviour
 		currentlyPlacing = false;
 		placementIndicator.SetActive(false);
 	}
-
 
 	internal CellType[] GetNeighbourTypesFor(Vector3Int position)
 	{
@@ -96,6 +103,7 @@ public class PlacementManager : MonoBehaviour
 		placementGrid[position.x, position.z] = type;
 		StructureModel structure = CreateANewStructureModel(position, structurePrefab, type);
 		temporaryRoadobjects.Add(position, structure);
+//		print("postavlja se privremena struktura " + position + " " + structurePrefab.name + " tip celije je " + type);
 	}
 
 	internal List<Vector3Int> GetNeighboursOfTypeFor(Vector3Int position, CellType type)
@@ -111,11 +119,12 @@ public class PlacementManager : MonoBehaviour
 
 	private StructureModel CreateANewStructureModel(Vector3Int position, GameObject structurePrefab, CellType type)
 	{
-		GameObject structure = new GameObject(type.ToString());
-		structure.transform.SetParent(transform);
-		structure.transform.localPosition = position;
-		var structureModel = structure.AddComponent<StructureModel>();
-		structureModel.CreateModel(structurePrefab);
+		//var structure = Instantiate(structurePrefab).transform;
+		var structure = PoolManager.Pools["Buildings"].Spawn(structurePrefab);
+		print("pravi se " + structurePrefab.name);
+		structure.position = position;
+		var structureModel = structure.gameObject.GetComponent<StructureModel>();
+		//structureModel.CreateModel(structurePrefab);
 		return structureModel;
 	}
 
@@ -136,7 +145,9 @@ public class PlacementManager : MonoBehaviour
 		{
 			var position = Vector3Int.RoundToInt(structure.transform.position);
 			placementGrid[position.x, position.z] = CellType.Empty;
-			Destroy(structure.gameObject);
+			print("usao u petlju ");
+			PoolManager.Pools["Buildings"].Despawn(structure.transform);
+			//Destroy(structure.gameObject);
 		}
 		temporaryRoadobjects.Clear();
 	}
@@ -145,6 +156,7 @@ public class PlacementManager : MonoBehaviour
 	{
 		foreach (var structure in temporaryRoadobjects)
 		{
+//			print("dodajem strukturu " + structure.Key+" "+structure.Value);
 			structureDictionary.Add(structure.Key, structure.Value);
 			DestroyNatureAt(structure.Key);
 		}
