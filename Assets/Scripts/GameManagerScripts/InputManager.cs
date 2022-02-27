@@ -14,6 +14,7 @@ public class InputManager : MonoBehaviour
     [SerializeField] private PlacementManager placementManager;
 
     private Vector2 cameraMovementVector;
+    private Vector3Int previusPos;
 
     public Vector2 CameraMovementVector
     {
@@ -49,40 +50,32 @@ public class InputManager : MonoBehaviour
     private void CheckClickHoldEvent()
     {
         if (!Input.GetMouseButton(0)) return;
+        var position = RaycastGround();
+        if (position == null) return;
+        if (position == previusPos) return;
+        previusPos = (Vector3Int) position;
         if (GameManager.instance.GetGameState() == GameManager.GameState.RoadBuilding &&
             EventSystem.current.IsPointerOverGameObject() == false)
         {
-            var position = RaycastGround();
-            if (position != null)
-            {
-                gameManager.ClearInputActions();
-                var pos = (Vector3Int) position;
-                roadManager.PlaceRoad(pos);
-            }
+            gameManager.ClearInputActions();
+            var pos = (Vector3Int) position;
+            roadManager.PlaceRoad(pos);
         }
 
         if (GameManager.instance.GetGameState() == GameManager.GameState.HouseBuilding &&
             EventSystem.current.IsPointerOverGameObject() == false)
         {
-            var position = RaycastGround();
-            if (position != null)
-            {
-                gameManager.ClearInputActions();
-                var pos = (Vector3Int) position;
-                buildingPlacer.DraggingHouses(pos);
-            }
+            gameManager.ClearInputActions();
+            var pos = (Vector3Int) position;
+            buildingPlacer.DraggingHouses(pos);
         }
 
         if (GameManager.instance.GetGameState() == GameManager.GameState.SingleStructure &&
             EventSystem.current.IsPointerOverGameObject() == false)
         {
-            var position = RaycastGround();
-            if (position != null)
-            {
-                gameManager.ClearInputActions();
-                var pos = (Vector3Int) position;
-                buildingPlacer.DraggingSingleBuilding(pos);
-            }
+            gameManager.ClearInputActions();
+            var pos = (Vector3Int) position;
+            buildingPlacer.DraggingSingleBuilding(pos);
         }
     }
 
@@ -92,6 +85,13 @@ public class InputManager : MonoBehaviour
         if (GameManager.instance.GetGameState() == GameManager.GameState.RoadBuilding)
         {
             gameManager.ClearInputActions();
+            var position = RaycastGround();
+            if (position != null)
+            {
+                var pos = (Vector3Int) position;
+                roadManager.PlaceRoad(pos);
+            }
+
             roadManager.FinishPlacingRoad();
         }
 
@@ -112,8 +112,8 @@ public class InputManager : MonoBehaviour
             {
                 BuildingPlacer.inst.BeginNewBuildingPlacement(City.inst.buildings[City.inst.indexOfSelectedBuilding],
                     (Vector3Int) position);
+            
             }
         }
     }
-   
 }

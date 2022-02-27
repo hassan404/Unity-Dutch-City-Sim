@@ -43,8 +43,8 @@
   <ItemGroup>
      <Compile Include="Assets\Plugins\PathologicalGames\PoolManager\SpawnPool.cs" />
      <Compile Include="Assets\Plugins\PathologicalGames\PoolManager\PoolManager.cs" />
-     <Compile Include="Assets\Plugins\PathologicalGames\PoolManager\PreRuntimePoolItem.cs" />
      <Compile Include="Assets\Plugins\Trinary Software\Timing.cs" />
+     <Compile Include="Assets\Plugins\PathologicalGames\PoolManager\PreRuntimePoolItem.cs" />
      <None Include="Assets\Plugins\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
      <None Include="Assets\Plugins\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\Plugins\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />

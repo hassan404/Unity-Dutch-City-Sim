@@ -44,12 +44,15 @@
      <Compile Include="Assets\Scripts\RoadScripts\RoadManager.cs" />
      <Compile Include="Assets\Scripts\GridScripts\GridSearch.cs" />
      <Compile Include="Assets\Scripts\AudioPlayer.cs" />
+     <Compile Include="Assets\Scripts\WalkerScripts\SpawnWalkers.cs" />
      <Compile Include="Assets\Scripts\BuildingScripts\BuildingPlacer.cs" />
+     <Compile Include="Assets\Scripts\Utility.cs" />
      <Compile Include="Assets\Scripts\GameManagerScripts\City.cs" />
      <Compile Include="Assets\Scripts\GameManagerScripts\TimeManager.cs" />
      <Compile Include="Assets\Scripts\PlacementManager.cs" />
      <Compile Include="Assets\Scripts\CameraScripts\CameraMovement.cs" />
      <Compile Include="Assets\Scripts\CameraScripts\CameraController.cs" />
+     <Compile Include="Assets\Scripts\UIScripts\OpenBriefManager.cs" />
      <Compile Include="Assets\Scripts\GameManagerScripts\InputManager.cs" />
      <Compile Include="Assets\Scripts\RoadScripts\RoadFixer.cs" />
      <Compile Include="Assets\Scripts\UIScripts\UIController.cs" />
@@ -57,13 +60,10 @@
      <Compile Include="Assets\Scripts\GridScripts\Grid.cs" />
      <Compile Include="Assets\Scripts\BuildingScripts\StructureModel.cs" />
      <Compile Include="Assets\Scripts\GameManagerScripts\GameManager.cs" />
+     <Compile Include="Assets\Scripts\WalkerScripts\WalkerMovement.cs" />
      <Compile Include="Assets\Scripts\BuildingScripts\BuildingPreset.cs" />
      <Compile Include="Assets\Scripts\Selector.cs" />
      <Compile Include="Assets\Scripts\BuildingScripts\StructureManager.cs" />
-     <Compile Include="Assets\Scripts\WalkerScripts\SpawnWalkers.cs" />
-     <Compile Include="Assets\Scripts\WalkerScripts\WalkerMovement.cs" />
-     <Compile Include="Assets\Scripts\Utility.cs" />
-     <Compile Include="Assets\Scripts\UIScripts\OpenBriefManager.cs" />
      <None Include="Assets\Art\Snowconesolid Assets\Block People\Snowconesolid Assets ReadMe.txt" />
      <Reference Include="UnityEngine">
      <HintPath>C:/Program Files/Unity/Hub/Editor/2021.2.7f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

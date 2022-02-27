@@ -26,6 +26,12 @@
   <component name="ChangeListManager">
     <list default="true" id="09620ce4-954e-41e8-8092-40c8ce675628" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity-Dutch-City-Sim/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity-Dutch-City-Sim/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assembly-CSharp-firstpass.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp-firstpass.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Road/Street_Deadend.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Road/Street_Deadend.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BuildingScripts/StructureModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BuildingScripts/StructureModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManagerScripts/InputManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManagerScripts/InputManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +60,9 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BuildingScripts/StructureManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BuildingScripts/StructureModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BuildingScripts/BuildingPlacer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/Shaders/TMP_Bitmap.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BuildingScripts/BuildingPreset.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/Shaders/TMPro_Surface.cginc" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlacementManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/WalkerScripts/SpawnWalkers.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Plugins/PathologicalGames/PoolManager/SpawnPool.cs" root0="FORCE_HIGHLIGHTING" />
@@ -67,6 +75,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CameraScripts/CameraMovement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManagerScripts/InputManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CameraScripts/CameraController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Plugins/Trinary Software/Timing.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameManagerScripts/TimeManager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -85,15 +94,15 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/BuildingScripts/BuildingPlacer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/BuildingScripts/StructureManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpawnWalkers.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameManagerScripts/InputManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GridScripts/Grid.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Utility.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/WalkerScripts/SpawnWalkers.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/WalkerScripts/WalkerMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlacementManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/BuildingScripts/StructureModel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameManagerScripts/TimeManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UIScripts/OpenBriefManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/BuildingScripts/StructureModel.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameManagerScripts/InputManager.cs" />
       </list>
     </option>
   </component>
