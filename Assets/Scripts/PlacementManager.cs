@@ -37,7 +37,7 @@ public class PlacementManager : MonoBehaviour
 		{
 			lastUpdateTime = Time.time;
 
-			var position = inputManager.RaycastGround();
+			Vector3Int? position = inputManager.RaycastGround();
 			if (position != null)
 			{
 				placementIndicator.transform.position = (Vector3)position;

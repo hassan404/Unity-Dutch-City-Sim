@@ -17,8 +17,9 @@ public class BuildingPlacer : MonoBehaviour
 	public static BuildingPlacer inst;
 
 	private bool firstClick = true;
+    public InputManager inputManager;
 
-	void Awake()
+    void Awake()
 	{
 		inst = this;
 	}
@@ -32,8 +33,14 @@ public class BuildingPlacer : MonoBehaviour
 		{
 			lastUpdateTime = Time.time;
 
-			curPlacementPos = Selector.inst.GetCurTilePosition();
-			placementIndicator.transform.position = curPlacementPos;
+			//curPlacementPos = Selector.inst.GetCurTilePosition();
+			//placementIndicator.transform.position = curPlacementPos;
+
+			Vector3Int? position = inputManager.RaycastGround();
+			if (position != null)
+			{
+				placementIndicator.transform.position = (Vector3)position;
+			}
 		}
 
 		if (currentlyPlacing && Input.GetMouseButtonDown(0))

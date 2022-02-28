@@ -49,7 +49,8 @@ public class City : MonoBehaviour
 		currentDate = currentDate.AddDays(1);
 		string formattedDate = CalculateDate();
 
-		statsText.text = string.Format("ƒ {0}     Pop {1}     {2}     Turn{3}", new object[4] { money, curPopulation, formattedDate, turnsElapsed });
+		statsText.text = string.Format("ƒ {0}     Pop {1}     {2}     Turn{3}", new object[4]
+										{ money, curPopulation, formattedDate, turnsElapsed });
 	}
 
 	string CalculateDate()

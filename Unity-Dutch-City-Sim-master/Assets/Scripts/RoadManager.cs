@@ -23,7 +23,7 @@ public class RoadManager : MonoBehaviour
 
 	public void PlaceRoad(Vector3Int position)
 	{
-		placementManager.EndPlacement();
+		//placementManager.EndPlacement();
 		if (placementManager.CheckIfPositionInBound(position) == false)
 			return;
 		if (placementManager.CheckIfPositionIsFree(position) == false)
@@ -91,7 +91,7 @@ public class RoadManager : MonoBehaviour
 
 	public void FinishPlacingRoad()
 	{
-		placementManager.EndPlacement();
+		//placementManager.EndPlacement();
 		placementMode = false;
 		placementManager.AddtemporaryStructuresToStructureDictionary();
 		if (temporaryPlacementPositions.Count > 0)
